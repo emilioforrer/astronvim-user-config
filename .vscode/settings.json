@@ -1,0 +1,408 @@
+{
+  "workbench.sideBar.location": "right",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "editor.tabSize": 4,
+  "editor.wordWrap": "on",
+  "editor.renderWhitespace": "all",
+  "[elixir]": {
+    "editor.defaultFormatter": "JakeBecker.elixir-ls"
+  },
+  "files.watcherExclude": {
+    "**/.bloop": true,
+    "**/.metals": true,
+    "**/.ammonite": true
+  },
+  "redhat.telemetry.enabled": false,
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "editor.renderControlCharacters": true,
+  "hediet.vscode-drawio.resizeImages": null,
+  "window.zoomLevel": 1,
+  "[python]": {
+    "editor.formatOnType": true,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4
+  },
+  "python.autoComplete.extraPaths": [],
+  "python.analysis.extraPaths": [],
+  "workbench.colorTheme": "Night Owl",
+  // NEOVIM
+  "vscode-neovim.neovimInitVimPaths.linux": "$HOME/.config/nvim/lua/user/init",
+  "vscode-neovim.neovimExecutablePaths.darwin": "",
+  "vscode-neovim.neovimExecutablePaths.win32": "",
+  "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+  "vscode-neovim.useWSL": true,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1,
+    "vscodevim.vim": 1
+  },
+  // VIM
+  "vim.enableNeovim": true,
+  "vim.neovimPath": "$HOME/.config/nvim/lua/user/ivim.lua",
+  "vim.neovimUseConfigFile": true,
+  "vim.neovimConfigPath": "$HOME/.config/nvim/lua/user",
+  "vim.insertModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-c>"],
+      "commands": [
+        {
+          "command": "editor.action.clipboardCopyAction",
+          "args": {
+            "text": ""
+          }
+        }
+      ]
+    }
+  ],  
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["c"],
+      "after": ["\"", "_", "c"]
+    },
+    {
+      "before": ["C"],
+      "after": ["\"", "_", "C"]
+    },
+    {
+      "before": ["d"],
+      "after": ["\"", "_", "d"]
+    },
+    {
+      "before": ["D"],
+      "after": ["\"", "_", "D"]
+    },
+    {
+      "before": ["d", "d"],
+      "after": ["\"", "_", "d", "d"]
+    },
+    {
+      "before": ["<BS>"],
+      "after": ["\"", "_", "d"]
+    },
+    {
+      "before": [
+        "<space>"
+      ],
+      "commands": [
+        "whichkey.show"
+      ]
+    },
+    // NAVIGATION
+    // switch b/w buffers
+    {
+      "before": [
+        "<S-h>"
+      ],
+      "commands": [
+        ":bprevious"
+      ]
+    },
+    {
+      "before": [
+        "<S-l>"
+      ],
+      "commands": [
+        ":bnext"
+      ]
+    },
+    {
+      "before": [
+        "[",
+        "d"
+      ],
+      "commands": [
+        "editor.action.marker.prev"
+      ]
+    },
+    {
+      "before": [
+        "]",
+        "d"
+      ],
+      "commands": [
+        "editor.action.marker.next"
+      ]
+    },
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["c"],
+      "after": ["\"", "_", "c"]
+    },
+    {
+      "before": ["C"],
+      "after": ["\"", "_", "C"]
+    },
+    {
+      "before": ["d"],
+      "after": ["\"", "_", "d"]
+    },
+    {
+      "before": ["D"],
+      "after": ["\"", "_", "D"]
+    },
+    {
+      "before": ["d", "d"],
+      "after": ["\"", "_", "d", "d"]
+    },
+    {
+      "before": ["<BS>"],
+      "after": ["\"", "_", "d"]
+    },
+    {
+      "before": [
+        "<space>"
+      ],
+      "commands": [
+        "whichkey.show"
+      ],
+    },
+    // Move selected lines while staying in visual mode
+    {
+      "before": [
+        "J"
+      ],
+      "commands": [
+        "editor.action.moveLinesDownAction"
+      ]
+    },
+    {
+      "before": [
+        "K"
+      ],
+      "commands": [
+        "editor.action.moveLinesUpAction"
+      ]
+    },
+    {
+      "before": ["g", "l"],
+      "commands": ["editor.action.showDefinitionPreviewHover"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+  ],
+  // WHICH KEY
+  "whichkey.bindings": [ 
+    {
+      "key": "/",
+      "name": "Comment line",
+      "type": "command",
+      "command": "editor.action.commentLine"
+    },
+    {
+      "key": ";",
+      "name": "Show commands",
+      "type": "command",
+      "command": "workbench.action.showCommands"
+    },
+    {
+      "key": "c",
+      "name": "Close active editor",
+      "type": "command",
+      "command": "workbench.action.closeActiveEditor"
+    },
+    {
+      "key": "e",
+      "name": "Toggle Explorer",
+      "type": "command",
+      "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+      "key": "m",
+      "name": "Toggle minimap",
+      "type": "command",
+      "command": "editor.action.toggleMinimap"
+    },
+    {
+      "key": "t",
+      "name": "Toggle terminal",
+      "type": "command",
+      "command": "workbench.action.togglePanel"
+    },
+    {
+      "key": "z",
+      "name": "Toggle Zen mode",
+      "type": "command",
+      "command": "workbench.action.toggleZenMode"
+    },
+    {
+      "key": "P",
+      "name": "Paste selection to clipboard",
+      "type": "command",
+      "command": "editor.action.clipboardPasteAction",
+    },
+    {
+      "key": "Y",
+      "name": "Copy selection to clipboard",
+      "type": "command",
+      "command": "editor.action.clipboardCopyAction"
+    },
+    {
+      "key": "n",
+      "name": "New untitled file",
+      "type": "command",
+      "command": "workbench.action.files.newUntitledFile"
+    },
+    {
+      "key": "l",
+      "name": "+LSP",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "f",
+          "name": "Format Document",
+          "type": "command",
+          "command": "editor.action.formatDocument"
+        },
+        {
+          "key": "d",
+          "name": "Hover Diagnostics",
+          "type": "command",
+          "command": "editor.action.showDefinitionPreviewHover"
+        },
+        {
+          "key": "a",
+          "name": "LSP Code Action",
+          "type": "command",
+          "command": "editor.action.quickFix"
+        },
+        {
+          "key": "s",
+          "name": "Search symbols",
+          "type": "command",
+          "command": "workbench.action.quickOpen"
+        },
+      ]
+    },
+    {
+      "key": "f",
+      "name": "+Find",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "f",
+          "name": "Find files",
+          "type": "command",
+          "command": "workbench.action.quickOpen"
+        },
+        {
+          "key": "o",
+          "name": "Find History",
+          "type": "command",
+          "command": "workbench.action.quickOpen"
+        },
+      ]
+    },
+    {
+      "key": "b",
+      "name": "+Buffers",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "|",
+          "name": "Vertical split",
+          "type": "command",
+          "command": "workbench.action.splitEditor"
+        },
+        {
+          "key": "\\",
+          "name": "Horizontal split",
+          "type": "command",
+          "command": "workbench.action.splitEditorDown"
+        },
+        {
+          "key": "d",
+          "name": "Close active editor",
+          "type": "command",
+          "command": "workbench.action.closeActiveEditor"
+        },
+        {
+          "key": "h",
+          "name": "Move editor to left group",
+          "type": "command",
+          "command": "workbench.action.moveEditorToLeftGroup"
+        },
+        {
+          "key": "j",
+          "name": "Move editor to below group",
+          "type": "command",
+          "command": "workbench.action.moveEditorToBelowGroup"
+        },
+        {
+          "key": "k",
+          "name": "Move editor to above group",
+          "type": "command",
+          "command": "workbench.action.moveEditorToAboveGroup"
+        },
+        {
+          "key": "l",
+          "name": "Move editor to right group",
+          "type": "command",
+          "command": "workbench.action.moveEditorToRightGroup"
+        },
+        {
+          "key": "f",
+          "name": "Next editor",
+          "type": "command",
+          "command": "workbench.action.nextEditor"
+        },
+        
+        {
+          "key": "p",
+          "name": "Previous editor",
+          "type": "command",
+          "command": "workbench.action.previousEditor"
+        },
+        {
+          "key": "P",
+          "name": "Paste clipboard to buffer",
+          "type": "commands",
+          "commands": [
+            "editor.action.selectAll",
+            "editor.action.clipboardPasteAction"
+          ]
+        },
+        {
+          "key": "b",
+          "name": "Show all editor",
+          "type": "command",
+          "command": "workbench.action.showAllEditors"
+        },
+        {
+          "key": "u",
+          "name": "Reopen closed editor",
+          "type": "command",
+          "command": "workbench.action.reopenClosedEditor"
+        },
+        {
+          "key": "l",
+          "name": "Close all buffers to the left",
+          "type": "command",
+          "command": "workbench.action.closeEditorsInGroupToLeft"
+        },
+        {
+          "key": "r",
+          "name": "Close all buffers to the right",
+          "type": "command",
+          "command": "workbench.action.closeEditorsInGroupToRight"
+        },
+        {
+          "key": "c",
+          "name": "Close other editors",
+          "type": "command",
+          "command": "workbench.action.closeOtherEditors"
+        },
+        {
+          "key": "Y",
+          "name": "Copy buffer to clipboard",
+          "type": "commands",
+          "commands": [
+            "editor.action.selectAll",
+            "editor.action.clipboardCopyAction",
+            "cancelSelection"
+          ]
+        }
+      ]
+    },
+  ]
+}
