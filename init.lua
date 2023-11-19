@@ -10,7 +10,34 @@ vim.api.nvim_set_keymap("n", "<C-n>", "<Plug>(multicursor-next)", {})
 vim.api.nvim_set_keymap("n", "<C-p>", "<Plug>(multicursor-prev)", {})
 vim.api.nvim_set_keymap("n", "<C-b>", "<C-V>", { noremap = true })
 
+-- Mapping for CTRL+a to select all text in normal, insert, and visual mode
+vim.api.nvim_set_keymap('n', '<C-a>', 'ggVG', { noremap = true })
+vim.api.nvim_set_keymap('v', '<C-a>', 'ggVG', { noremap = true })
+vim.api.nvim_set_keymap('i', '<C-a>', '<Esc>ggVG', { noremap = true })
+
+-- Change Crtl c to copy to clipboard
+vim.api.nvim_set_keymap('i', '<C-c>', '<Esc>"+yiw`^i', { noremap = true })
+vim.api.nvim_set_keymap('v', '<C-c>', '"+y', { noremap = true })
+
+vim.api.nvim_set_keymap('i', '<C-C>', '<Esc>"+yiw`^i', { noremap = true })
+vim.api.nvim_set_keymap('v', '<C-C>', '"+y', { noremap = true })
+
 local opts = { noremap = true, silent = true }
+
+-- Change without copy
+vim.api.nvim_set_keymap("n", "c", '"_c', { noremap = true })
+vim.api.nvim_set_keymap("n", "<S-c>", '"_C', { noremap = true })
+
+-- Delete without copy
+vim.api.nvim_set_keymap("n", "d", '"_d', { noremap = true })
+vim.api.nvim_set_keymap("n", "<S-d>", '"_D', { noremap = true })
+vim.api.nvim_set_keymap("n", "dd", '"_dd', { noremap = true })
+vim.api.nvim_set_keymap("n", "<BS>", '"_d', { noremap = true })
+
+vim.api.nvim_set_keymap("v", "d", '"_d', { noremap = true })
+vim.api.nvim_set_keymap("v", "<S-d>", '"_D', { noremap = true })
+vim.api.nvim_set_keymap("v", "dd", '"_dd', { noremap = true })
+vim.api.nvim_set_keymap("v", "<BS>", '"_d', { noremap = true })
 
 -- Copy to clipboard
 vim.api.nvim_set_keymap("n", "<leader>Y", '"+y', { noremap = true })
