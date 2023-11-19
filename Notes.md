@@ -1,0 +1,232 @@
+# AstroNvim
+
+## Which key
+- `/` Toggle comment line
+- `c` Close buffer
+- `C` Force close buffer
+- `e` Toggle Explorer
+- `h` Home Screen
+- `n` New File
+- `o` Toggle Explorer Focus
+- `q` Quit
+- `w` Save
+- `b` Buffers
+  - `\` Horizontal split buffer from tabline
+  - `|` Vertical splut buffer from tabline
+  - `b` Select buffer from tabline
+  - `C` Close all buffers
+  - `c` Close all buffers except current
+  - `l` close all buffers to the left
+  - `d` close buffer from tabline
+  - `p` previous buffer
+  - `r` close all buffers to the right
+  - `s` sort buffers
+    - `e` by extension
+    - `r` by relative path
+    - `p` by full path
+    - `i` by buffer number
+    - `m` by modification
+- `d` debugger
+  - `b` toggle breakpoint (f9)
+  - `b` clear breakpoints
+  - `c` start/continue (f5)
+  - `C` Conditional Breakpoint (S-F9)
+  - `E` Evaluate input
+  - `h` Debugger Hover
+  - `i` Step Into (F11)
+  - `o` Step Over (F10)
+  - `O` Step Out (S-F11)
+  - `q` Close Session
+  - `Q` Terminate Session (S-F5)
+  - `p` Pause (F6)
+  - `r` Restart (C-F5)
+  - `R` Toggle REPL
+  - `s` Run To Cursor
+  - `u` Toogle Debugger UI
+- `g` Git
+  - `b` Git branches
+  - `c` Git commits (repository)
+  - `C` Git commits (current file)
+  - `g` Toggle LazyGit
+  - `l` View Git blame
+  - `L` View full Git blame
+  - `p` Preview Git hunk
+  - `h` Reset Git hunk
+  - `r` Reset Git buffer
+  - `s` Stage Git hunk
+  - `S` Stage Git buffer
+  - `t` Git status
+  - `u` Unstage Git hunk
+  - `d` View Git diff
+- `l` LSP
+  - `S` Symbols outline
+  - `s` Search symbols
+- `p` Packages
+  - `A` AstroNvim Update
+  - `a` Update plugins and Mason Packages
+  - `i` Install Plugins
+  - `m` Mason Installer
+  - `M` Mason Update
+  - `s` Plugins Status
+  - `S` Plugins Sync
+  - `u` Plugins Check Updates
+  - `U` Plugins Update
+  - `v` AstroNvim Version
+- `S` Session
+  - `.` Load current directory session
+  - `l` Load last session
+  - `s` Save this session
+  - `d` Delete session
+  - `f` Search sessions
+  - `.` Load current directory session
+- `t` Terminal
+  - `g` ToggleTerm lazygit
+  - `n` ToggleTerm node
+  - `u` ToggleTerm gdu
+  - `t` ToggleTerm btm
+  - `p` ToggleTerm python
+  - `f` ToggleTerm float
+  - `l` ToogleTerm LazyGit
+  - `h` ToggleTerm horizontal split
+  - `v` ToggleTerm vertical split
+- `u` UI/UX
+  - `a` Toggle autopairs
+  - `b` Toggle background
+  - `c` Toggle autocompletion
+  - `C` Toggle color highlight
+  - `d` Toggle diagnostics
+  - `g` Toggle signcolumn
+  - `h` Tooggle foldcolumn
+  - `i` Change indent setting
+  - `l` Toggle statusline
+  - `L` Toggle CodeLens
+  - `n` Change line numbering
+  - `N` Toggle Notifications
+  - `p` Toggle paste mode
+  - `s` Toggle spellcheck
+  - `S` Toggle conceal
+  - `t` Toggle tabline
+  - `u` Toggle URL highlight
+  - `w` Toggle wrap
+  - `y` Toggle syntax highlighting (buffer)
+
+
+# LunarNvim
+
+## Which key
+
+Certainly! Here are the extracted commands for each key and nested key:
+
+- `/` Comment toggle current line
+- `;` Dashboard
+- `c` Close Buffer
+- `e` Explorer
+- `f` Find File
+- `h` No Highlight
+- `q` Quit
+- `w` Save
+- `b` Buffers
+  - `b` Previous
+  - `D` Sort by directory
+  - `e` Pick which buffer to close
+  - `f` Find
+  - `h` Close all to the left
+  - `j` Jump
+  - `L` Sort by language
+  - `l` Close all to the right
+  - `n` Next
+  - `W` Save without formatting (noautocmd)
+- `d` Debug
+  - `b` Step Back
+  - `c` Continue
+  - `C` Run To Cursor
+  - `d` Disconnect
+  - `g` Get Session
+  - `i` Step Into
+  - `o` Step Over
+  - `u` Step Out
+  - `p` Pause
+  - `r` Toggle Repl
+  - `t` Toggle Breakpoint
+  - `s` Start
+  - `q` Quit
+  - `U` Toggle UI
+- `p` Plugins
+  - `i` Install
+  - `s` Sync
+  - `S` Status
+  - `c` Clean
+  - `u` Update
+  - `p` Profile
+  - `l` Log
+  - `d` Debug
+- `g` Git
+  - `g` Lazygit
+  - `j` Next Hunk
+  - `k` Prev Hunk
+  - `l` Blame
+  - `p` Preview Hunk
+  - `r` Reset Hunk
+  - `R` Reset Buffer
+  - `s` Stage Hunk
+  - `u` Undo Stage Hunk
+  - `o` Open changed file
+  - `b` Checkout branch
+  - `c` Checkout commit
+  - `C` Checkout commit(for current file)
+  - `d` Git Diff
+- `l` LSP
+  - `a` Code Action
+  - `d` Buffer Diagnostics
+  - `w` Diagnostics
+  - `f` Format
+  - `i` Info
+  - `I` Mason Info
+  - `j` Next Diagnostic
+  - `k` Prev Diagnostic
+  - `l` CodeLens Action
+  - `q` Quickfix
+  - `r` Rename
+  - `s` Document Symbols
+  - `S` Workspace Symbols
+  - `e` Telescope Quickfix
+- `L` +LunarVim
+  - `c` Edit config.lua
+  - `d` View LunarVim's docs
+  - `f` Find LunarVim files
+  - `g` Grep LunarVim files
+  - `k` View LunarVim's keymappings
+  - `i` Toggle LunarVim Info
+  - `I` View LunarVim's changelog
+  - `l` +logs
+    - `d` View default log
+    - `D` Open the default logfile
+    - `l` View lsp log
+    - `L` Open the LSP logfile
+    - `n` View neovim log
+    - `N` Open the Neovim logfile
+  - `r` Reload LunarVim's configuration
+  - `u` Update LunarVim
+- `s` Search
+  - `b` Checkout branch
+  - `c` Colorscheme
+  - `f` Find File
+  - `h` Find Help
+  - `H` Find highlight groups
+  - `M` Man Pages
+  - `r` Open Recent File
+  - `R` Registers
+  - `t` Text
+  - `k` Keymaps
+  - `C` Commands
+  - `l` Resume last search
+  - `p` Colorscheme with Preview
+- `T` Treesitter
+  - `i` Info
+
+
+
+
+
+
+# Custom
