@@ -49,8 +49,8 @@ vim.api.nvim_set_keymap("n", "<leader>PP", '"+P', { noremap = true })
 vim.api.nvim_set_keymap("v", "<leader>PP", '"+p', { noremap = true })
 
 -- Icon picker
-vim.api.nvim_set_keymap("n", "<Leader><Leader>i", "<cmd>IconPickerNormal<cr>", opts)
-vim.api.nvim_set_keymap("n", "<Leader><Leader>y", "<cmd>IconPickerYank<cr>", opts)
+vim.api.nvim_set_keymap("n", "<C-i>", "<cmd>IconPickerNormal<cr>", opts)
+vim.api.nvim_set_keymap("n", "<C-I>", "<cmd>IconPickerYank<cr>", opts)
 vim.api.nvim_set_keymap("i", "<C-i>", "<cmd>IconPickerInsert<cr>", opts)
 
 -- Some ThePrimeagen binds

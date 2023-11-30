@@ -43,6 +43,28 @@
   "vim.neovimConfigPath": "$HOME/.config/nvim/lua/user",
   "vim.insertModeKeyBindingsNonRecursive": [
     {
+      "before": ["<C-a>"],
+      "commands": [
+        {
+          "command": "editor.action.selectAll",
+          "args": {
+            "text": ""
+          }
+        }
+      ]
+    },
+    {
+      "before": ["<C-i>"],
+      "commands": [
+        {
+          "command": "emojisense.quickEmoji",
+          "args": {
+            "text": ""
+          }
+        }
+      ]
+    },
+    {
       "before": ["<C-c>"],
       "commands": [
         {
@@ -55,6 +77,28 @@
     }
   ],  
   "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-a>"],
+      "commands": [
+        {
+          "command": "editor.action.selectAll",
+          "args": {
+            "text": ""
+          }
+        }
+      ]
+    },
+    {
+      "before": ["<C-i>"],
+      "commands": [
+        {
+          "command": "emojisense.quickEmoji",
+          "args": {
+            "text": ""
+          }
+        }
+      ]
+    },
     {
       "before": ["c"],
       "after": ["\"", "_", "c"]
@@ -125,6 +169,44 @@
     },
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-a>"],
+      "commands": [
+        {
+          "command": "editor.action.selectAll",
+          "args": {
+            "text": ""
+          }
+        }
+      ]
+    },
+    {
+      "before": ["<C-i>"],
+      "commands": [
+        {
+          "command": "emojisense.quickEmoji",
+          "args": {
+            "text": ""
+          }
+        }
+      ]
+    },
+    {
+      "before": [
+        "<C-n>"
+      ],
+      "commands": [
+        "editor.action.addSelectionToNextFindMatch"
+      ]
+    },
+    {
+      "before": [
+        "<C-l>"
+      ],
+      "commands": [
+        "editor.action.selectHighlights"
+      ]
+    },
     {
       "before": ["c"],
       "after": ["\"", "_", "c"]
@@ -290,6 +372,12 @@
           "name": "Find History",
           "type": "command",
           "command": "workbench.action.quickOpen"
+        },
+        {
+          "key": "n",
+          "name": "Find Next Match",
+          "type": "command",
+          "command": "editor.action.addSelectionToNextFindMatch"
         },
       ]
     },
