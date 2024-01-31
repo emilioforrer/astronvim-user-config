@@ -27,7 +27,7 @@
   "python.analysis.extraPaths": [],
   "workbench.colorTheme": "Night Owl",
   // NEOVIM
-  "vscode-neovim.neovimInitVimPaths.linux": "$HOME/.config/nvim/lua/user/init",
+  "vscode-neovim.neovimInitVimPaths.linux": "~/.config/nvim/init.lua",
   "vscode-neovim.neovimExecutablePaths.darwin": "",
   "vscode-neovim.neovimExecutablePaths.win32": "",
   "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
@@ -38,12 +38,15 @@
   },
   // VIM
   "vim.enableNeovim": true,
-  "vim.neovimPath": "$HOME/.config/nvim/lua/user/ivim.lua",
+  "vim.startInInsertMode": true,
+  "vim.neovimPath": "/usr/bin/nvim",
   "vim.neovimUseConfigFile": true,
-  "vim.neovimConfigPath": "$HOME/.config/nvim/lua/user",
+  "vim.neovimConfigPath": "~/.config/nvim/init.lua",
   "vim.insertModeKeyBindingsNonRecursive": [
     {
-      "before": ["<C-a>"],
+      "before": [
+        "<C-a>"
+      ],
       "commands": [
         {
           "command": "editor.action.selectAll",
@@ -54,18 +57,9 @@
       ]
     },
     {
-      "before": ["<C-i>"],
-      "commands": [
-        {
-          "command": "emojisense.quickEmoji",
-          "args": {
-            "text": ""
-          }
-        }
-      ]
-    },
-    {
-      "before": ["<C-c>"],
+      "before": [
+        "<C-c>"
+      ],
       "commands": [
         {
           "command": "editor.action.clipboardCopyAction",
@@ -74,11 +68,26 @@
           }
         }
       ]
+    },
+    {
+      "before": [
+        "<C-i>"
+      ],
+      "commands": [
+        {
+          "command": "emojisense.quickEmoji",
+          "args": {
+            "text": ""
+          }
+        }
+      ]
     }
-  ],  
+  ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<C-a>"],
+      "before": [
+        "<C-a>"
+      ],
       "commands": [
         {
           "command": "editor.action.selectAll",
@@ -89,7 +98,9 @@
       ]
     },
     {
-      "before": ["<C-i>"],
+      "before": [
+        "<C-i>"
+      ],
       "commands": [
         {
           "command": "emojisense.quickEmoji",
@@ -100,28 +111,66 @@
       ]
     },
     {
-      "before": ["c"],
-      "after": ["\"", "_", "c"]
+      "before": [
+        "c"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "c"
+      ]
     },
     {
-      "before": ["C"],
-      "after": ["\"", "_", "C"]
+      "before": [
+        "C"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "C"
+      ]
     },
     {
-      "before": ["d"],
-      "after": ["\"", "_", "d"]
+      "before": [
+        "d"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "d"
+      ]
     },
     {
-      "before": ["D"],
-      "after": ["\"", "_", "D"]
+      "before": [
+        "D"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "D"
+      ]
     },
     {
-      "before": ["d", "d"],
-      "after": ["\"", "_", "d", "d"]
+      "before": [
+        "d",
+        "d"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "d",
+        "d"
+      ]
     },
     {
-      "before": ["<BS>"],
-      "after": ["\"", "_", "d"]
+      "before": [
+        "<BS>"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "d"
+      ]
     },
     {
       "before": [
@@ -170,7 +219,9 @@
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
-      "before": ["<C-a>"],
+      "before": [
+        "<C-a>"
+      ],
       "commands": [
         {
           "command": "editor.action.selectAll",
@@ -181,7 +232,9 @@
       ]
     },
     {
-      "before": ["<C-i>"],
+      "before": [
+        "<C-i>"
+      ],
       "commands": [
         {
           "command": "emojisense.quickEmoji",
@@ -208,28 +261,66 @@
       ]
     },
     {
-      "before": ["c"],
-      "after": ["\"", "_", "c"]
+      "before": [
+        "c"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "c"
+      ]
     },
     {
-      "before": ["C"],
-      "after": ["\"", "_", "C"]
+      "before": [
+        "C"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "C"
+      ]
     },
     {
-      "before": ["d"],
-      "after": ["\"", "_", "d"]
+      "before": [
+        "d"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "d"
+      ]
     },
     {
-      "before": ["D"],
-      "after": ["\"", "_", "D"]
+      "before": [
+        "D"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "D"
+      ]
     },
     {
-      "before": ["d", "d"],
-      "after": ["\"", "_", "d", "d"]
+      "before": [
+        "d",
+        "d"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "d",
+        "d"
+      ]
     },
     {
-      "before": ["<BS>"],
-      "after": ["\"", "_", "d"]
+      "before": [
+        "<BS>"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "d"
+      ]
     },
     {
       "before": [
@@ -257,14 +348,18 @@
       ]
     },
     {
-      "before": ["g", "l"],
-      "commands": ["editor.action.showDefinitionPreviewHover"]
+      "before": [
+        "g",
+        "l"
+      ],
+      "commands": [
+        "editor.action.showDefinitionPreviewHover"
+      ]
     }
   ],
-  "vim.visualModeKeyBindings": [
-  ],
+  "vim.visualModeKeyBindings": [],
   // WHICH KEY
-  "whichkey.bindings": [ 
+  "whichkey.bindings": [
     {
       "key": "/",
       "name": "Comment line",
@@ -311,7 +406,10 @@
       "key": "P",
       "name": "Paste selection to clipboard",
       "type": "command",
-      "command": "editor.action.clipboardPasteAction",
+      "command": [
+        "editor.action.selectAll",
+        "editor.action.clipboardPasteAction"
+      ]
     },
     {
       "key": "Y",
@@ -373,12 +471,6 @@
           "type": "command",
           "command": "workbench.action.quickOpen"
         },
-        {
-          "key": "n",
-          "name": "Find Next Match",
-          "type": "command",
-          "command": "editor.action.addSelectionToNextFindMatch"
-        },
       ]
     },
     {
@@ -434,7 +526,6 @@
           "type": "command",
           "command": "workbench.action.nextEditor"
         },
-        
         {
           "key": "p",
           "name": "Previous editor",
