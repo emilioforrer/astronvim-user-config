@@ -24,6 +24,9 @@ vim.api.nvim_set_keymap('v', '<C-C>', '"+y', { noremap = true })
 
 local opts = { noremap = true, silent = true }
 
+vim.api.nvim_set_keymap('i', '<C-s>', '<Esc>:w<CR>a', opts)
+
+
 -- Change without copy
 vim.api.nvim_set_keymap("n", "c", '"_c', { noremap = true })
 vim.api.nvim_set_keymap("n", "<S-c>", '"_C', { noremap = true })
