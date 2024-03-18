@@ -583,5 +583,30 @@
         }
       ]
     },
-  ]
+  ],
+  "files.associations": {
+    "*.excalidraw": "json",
+    "*.excalidrawlib": "json",
+    ".env*": "dotenv"
+  },
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "keyword.other.dotenv",
+        "settings": {
+          "foreground": "#FF000000"
+        }
+      }
+    ]
+  },
+  "editor.inlineSuggest.suppressSuggestions": true,
+  "yaml.schemas": {
+    "file:///c%3A/Users/devem/.vscode/extensions/atlassian.atlascode-3.0.10/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+  },
+  "remote.autoForwardPortsSource": "hybrid",
+  "terminal.integrated.accessibleViewPreserveCursorPosition": true,
+  "terminal.integrated.enableImages": true,
+  "terminal.integrated.sendKeybindingsToShell": true,
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "fira-code-nerd, FiraCode Nerd Font, Consolas, 'Courier New', monospace"
 }
