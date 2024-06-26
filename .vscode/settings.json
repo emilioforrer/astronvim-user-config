@@ -26,27 +26,23 @@
   "python.autoComplete.extraPaths": [],
   "python.analysis.extraPaths": [],
   "workbench.colorTheme": "Night Owl",
-  // NEOVIM
-  "vscode-neovim.neovimInitVimPaths.linux": "~/.config/nvim/init.lua",
-  "vscode-neovim.neovimExecutablePaths.darwin": "",
-  "vscode-neovim.neovimExecutablePaths.win32": "",
-  "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
-  "vscode-neovim.useWSL": true,
   "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1,
     "vscodevim.vim": 1
   },
   // VIM
+  "vim.easymotionDimBackground": true,
+  "vim.handleKeys": {
+    "<C-d>": true,
+    "<C-s>": false,
+    "<C-v>": false,
+    "<C-z>": false
+  },
   "vim.enableNeovim": true,
   "vim.startInInsertMode": true,
-  "vim.neovimPath": "/usr/bin/nvim",
   "vim.neovimUseConfigFile": true,
-  "vim.neovimConfigPath": "~/.config/nvim/init.lua",
   "vim.insertModeKeyBindingsNonRecursive": [
     {
-      "before": [
-        "<C-a>"
-      ],
+      "before": ["<C-a>"],
       "commands": [
         {
           "command": "editor.action.selectAll",
@@ -57,9 +53,7 @@
       ]
     },
     {
-      "before": [
-        "<C-c>"
-      ],
+      "before": ["<C-c>"],
       "commands": [
         {
           "command": "editor.action.clipboardCopyAction",
@@ -70,9 +64,7 @@
       ]
     },
     {
-      "before": [
-        "<C-i>"
-      ],
+      "before": ["<C-i>"],
       "commands": [
         {
           "command": "emojisense.quickEmoji",
@@ -85,9 +77,7 @@
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": [
-        "<C-a>"
-      ],
+      "before": ["<C-a>"],
       "commands": [
         {
           "command": "editor.action.selectAll",
@@ -98,9 +88,7 @@
       ]
     },
     {
-      "before": [
-        "<C-i>"
-      ],
+      "before": ["<C-i>"],
       "commands": [
         {
           "command": "emojisense.quickEmoji",
@@ -111,117 +99,55 @@
       ]
     },
     {
-      "before": [
-        "c"
-      ],
-      "after": [
-        "\"",
-        "_",
-        "c"
-      ]
+      "before": ["c"],
+      "after": ["\"", "_", "c"]
     },
     {
-      "before": [
-        "C"
-      ],
-      "after": [
-        "\"",
-        "_",
-        "C"
-      ]
+      "before": ["C"],
+      "after": ["\"", "_", "C"]
     },
     {
-      "before": [
-        "d"
-      ],
-      "after": [
-        "\"",
-        "_",
-        "d"
-      ]
+      "before": ["d"],
+      "after": ["\"", "_", "d"]
     },
     {
-      "before": [
-        "D"
-      ],
-      "after": [
-        "\"",
-        "_",
-        "D"
-      ]
+      "before": ["D"],
+      "after": ["\"", "_", "D"]
     },
     {
-      "before": [
-        "d",
-        "d"
-      ],
-      "after": [
-        "\"",
-        "_",
-        "d",
-        "d"
-      ]
+      "before": ["d", "d"],
+      "after": ["\"", "_", "d", "d"]
     },
     {
-      "before": [
-        "<BS>"
-      ],
-      "after": [
-        "\"",
-        "_",
-        "d"
-      ]
+      "before": ["<BS>"],
+      "after": ["\"", "_", "d"]
     },
     {
-      "before": [
-        "<space>"
-      ],
-      "commands": [
-        "whichkey.show"
-      ]
+      "before": ["<space>"],
+      "commands": ["whichkey.show"]
     },
     // NAVIGATION
     // switch b/w buffers
     {
-      "before": [
-        "<S-h>"
-      ],
-      "commands": [
-        ":bprevious"
-      ]
+      "before": ["<S-h>"],
+      "commands": [":bprevious"]
     },
     {
-      "before": [
-        "<S-l>"
-      ],
-      "commands": [
-        ":bnext"
-      ]
+      "before": ["<S-l>"],
+      "commands": [":bnext"]
     },
     {
-      "before": [
-        "[",
-        "d"
-      ],
-      "commands": [
-        "editor.action.marker.prev"
-      ]
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.prev"]
     },
     {
-      "before": [
-        "]",
-        "d"
-      ],
-      "commands": [
-        "editor.action.marker.next"
-      ]
-    },
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.next"]
+    }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
-      "before": [
-        "<C-a>"
-      ],
+      "before": ["<C-a>"],
       "commands": [
         {
           "command": "editor.action.selectAll",
@@ -232,9 +158,7 @@
       ]
     },
     {
-      "before": [
-        "<C-i>"
-      ],
+      "before": ["<C-i>"],
       "commands": [
         {
           "command": "emojisense.quickEmoji",
@@ -245,116 +169,53 @@
       ]
     },
     {
-      "before": [
-        "<C-n>"
-      ],
-      "commands": [
-        "editor.action.addSelectionToNextFindMatch"
-      ]
+      "before": ["<C-n>"],
+      "commands": ["editor.action.addSelectionToNextFindMatch"]
     },
     {
-      "before": [
-        "<C-l>"
-      ],
-      "commands": [
-        "editor.action.selectHighlights"
-      ]
+      "before": ["<C-l>"],
+      "commands": ["editor.action.selectHighlights"]
     },
     {
-      "before": [
-        "c"
-      ],
-      "after": [
-        "\"",
-        "_",
-        "c"
-      ]
+      "before": ["c"],
+      "after": ["\"", "_", "c"]
     },
     {
-      "before": [
-        "C"
-      ],
-      "after": [
-        "\"",
-        "_",
-        "C"
-      ]
+      "before": ["C"],
+      "after": ["\"", "_", "C"]
     },
     {
-      "before": [
-        "d"
-      ],
-      "after": [
-        "\"",
-        "_",
-        "d"
-      ]
+      "before": ["d"],
+      "after": ["\"", "_", "d"]
     },
     {
-      "before": [
-        "D"
-      ],
-      "after": [
-        "\"",
-        "_",
-        "D"
-      ]
+      "before": ["D"],
+      "after": ["\"", "_", "D"]
     },
     {
-      "before": [
-        "d",
-        "d"
-      ],
-      "after": [
-        "\"",
-        "_",
-        "d",
-        "d"
-      ]
+      "before": ["d", "d"],
+      "after": ["\"", "_", "d", "d"]
     },
     {
-      "before": [
-        "<BS>"
-      ],
-      "after": [
-        "\"",
-        "_",
-        "d"
-      ]
+      "before": ["<BS>"],
+      "after": ["\"", "_", "d"]
     },
     {
-      "before": [
-        "<space>"
-      ],
-      "commands": [
-        "whichkey.show"
-      ],
+      "before": ["<space>"],
+      "commands": ["whichkey.show"]
     },
     // Move selected lines while staying in visual mode
     {
-      "before": [
-        "J"
-      ],
-      "commands": [
-        "editor.action.moveLinesDownAction"
-      ]
+      "before": ["J"],
+      "commands": ["editor.action.moveLinesDownAction"]
     },
     {
-      "before": [
-        "K"
-      ],
-      "commands": [
-        "editor.action.moveLinesUpAction"
-      ]
+      "before": ["K"],
+      "commands": ["editor.action.moveLinesUpAction"]
     },
     {
-      "before": [
-        "g",
-        "l"
-      ],
-      "commands": [
-        "editor.action.showDefinitionPreviewHover"
-      ]
+      "before": ["g", "l"],
+      "commands": ["editor.action.showDefinitionPreviewHover"]
     }
   ],
   "vim.visualModeKeyBindings": [],
@@ -451,7 +312,7 @@
           "name": "Search symbols",
           "type": "command",
           "command": "workbench.action.quickOpen"
-        },
+        }
       ]
     },
     {
@@ -470,7 +331,7 @@
           "name": "Find History",
           "type": "command",
           "command": "workbench.action.quickOpen"
-        },
+        }
       ]
     },
     {
@@ -582,7 +443,7 @@
           ]
         }
       ]
-    },
+    }
   ],
   "files.associations": {
     "*.excalidraw": "json",
@@ -606,7 +467,9 @@
   "remote.autoForwardPortsSource": "hybrid",
   "terminal.integrated.accessibleViewPreserveCursorPosition": true,
   "terminal.integrated.enableImages": true,
-  "terminal.integrated.sendKeybindingsToShell": true,
+  "terminal.integrated.sendKeybindingsToShell": false,
   "editor.fontLigatures": true,
-  "editor.fontFamily": "fira-code-nerd, FiraCode Nerd Font, Consolas, 'Courier New', monospace"
+  "editor.fontFamily": "fira-code-nerd, FiraCode Nerd Font, Consolas, 'Courier New', monospace",
+  "mermaid-editor.generate.scale": 1,
+  "mermaid-editor.generate.quality": 5
 }
