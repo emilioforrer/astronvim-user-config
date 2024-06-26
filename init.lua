@@ -28,8 +28,8 @@ vim.api.nvim_set_keymap('i', '<C-s>', '<Esc>:w<CR>a', opts)
 
 
 -- Change without copy
-vim.api.nvim_set_keymap("n", "c", '"_c', { noremap = true })
-vim.api.nvim_set_keymap("n", "<S-c>", '"_C', { noremap = true })
+-- vim.api.nvim_set_keymap("n", "c", '"_c', { noremap = true })
+-- vim.api.nvim_set_keymap("n", "<S-c>", '"_C', { noremap = true })
 
 -- Delete without copy
 -- vim.api.nvim_set_keymap("n", "d", '"_d', { noremap = true })
