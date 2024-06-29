@@ -4,6 +4,47 @@ vim.o.exrc = true
 vim.o.secure = true
 vim.opt.clipboard = "unnamedplus"
 
+-- Enable list mode to show whitespace characters
+vim.opt.list = true
+
+-- Define the symbols for whitespace characters
+vim.opt.listchars = {
+    space = '·',       -- Character to show for space
+    tab = '→ ',        -- Character to show for tab
+    trail = '•',       -- Character to show for trailing spaces
+    eol = '↲',         -- Character to show for end of line
+}
+
+-- Optionally, you can customize the appearance of the whitespace characters using highlight groups
+-- For example, to change the color of the whitespace characters:
+vim.cmd('highlight SpecialKey ctermfg=darkgray guifg=darkgray')
+vim.cmd('highlight NonText ctermfg=darkgray guifg=darkgray')
+vim.cmd('highlight EndOfBuffer ctermfg=darkgray guifg=darkgray')
+
+-- Function to enable list mode
+local function enable_list_mode()
+  vim.opt.list = true
+end
+
+-- Function to disable list mode
+local function disable_list_mode()
+  vim.opt.list = false
+end
+
+-- Autocommands to toggle list mode based on the mode
+vim.api.nvim_create_autocmd('InsertEnter', {
+  pattern = '*',
+  callback = disable_list_mode
+})
+
+vim.api.nvim_create_autocmd('InsertLeave', {
+  pattern = '*',
+  callback = enable_list_mode
+})
+
+-- Initially enable list mode when starting in normal mode
+enable_list_mode()
+
 -- ---------------------- Keybindings ------------------------------
 
 vim.api.nvim_set_keymap("n", "<C-n>", "<Plug>(multicursor-next)", {})
