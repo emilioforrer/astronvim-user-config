@@ -63,9 +63,14 @@ vim.api.nvim_set_keymap('v', '<C-c>', '"+y', { noremap = true })
 vim.api.nvim_set_keymap('i', '<C-C>', '<Esc>"+yiw`^i', { noremap = true })
 vim.api.nvim_set_keymap('v', '<C-C>', '"+y', { noremap = true })
 
+
 local opts = { noremap = true, silent = true }
 
 vim.api.nvim_set_keymap('i', '<C-s>', '<Esc>:w<CR>a', opts)
+
+-- Cut text and copy to clipboard
+-- Key mapping for visual mode to cut text and copy to clipboard
+vim.api.nvim_set_keymap("v", "<C-x>", '"+d', { noremap = true, silent = true })
 
 
 -- Change without copy
