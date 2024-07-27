@@ -1,5 +1,45 @@
 -- Configuration
 
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+
+-- Set indentation per language
+
+-- Function to set tab settings for Go files
+local function set_go_tabs()
+  vim.bo.tabstop = 4
+  vim.bo.shiftwidth = 4
+  vim.bo.softtabstop = 4
+  vim.bo.expandtab = false
+end
+
+-- Function to set tab settings for Python files
+local function set_python_tabs()
+  vim.bo.tabstop = 4
+  vim.bo.shiftwidth = 4
+  vim.bo.softtabstop = 4
+  vim.bo.expandtab = true
+end
+
+-- Create an autocommand group for Go and Python settings
+vim.api.nvim_create_augroup('ProgrammingSettings', { clear = true })
+
+-- Apply the tab settings for Go files
+vim.api.nvim_create_autocmd('FileType', {
+  group = 'ProgrammingSettings',
+  pattern = 'go',
+  callback = set_go_tabs,
+})
+
+-- Apply the tab settings for Python files
+vim.api.nvim_create_autocmd('FileType', {
+  group = 'ProgrammingSettings',
+  pattern = 'python',
+  callback = set_python_tabs,
+})
+
 vim.o.exrc = true
 vim.o.secure = true
 vim.opt.clipboard = "unnamedplus"

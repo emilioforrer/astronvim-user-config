@@ -41,5 +41,14 @@ return {
             opts.window.position = "right"
             return opts
         end   
+    },
+    {
+        "AstroNvim/astrocore",
+        opts = function(_, opts)
+            -- Disable GuessIndent autocmd
+            opts.autocmds.GuessIndent[1].callback = function(args) end
+            opts.autocmds.GuessIndent[2].callback = function(args) end
+            return opts
+        end   
     }
 }
