@@ -12,6 +12,8 @@ vim.opt.clipboard = "unnamedplus"
 
 -- ---------------------- Keybindings ------------------------------
 
+-- Unindent code with Shift + Tab in insert mode
+vim.api.nvim_set_keymap('i', '<S-Tab>', '<C-d>', { noremap = true, silent = true })
 
 -- Mapping for CTRL+a to select all text in normal, insert, and visual mode
 vim.api.nvim_set_keymap('n', '<C-a>', 'ggVG', { noremap = true })
