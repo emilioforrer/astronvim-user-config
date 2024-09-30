@@ -21,6 +21,7 @@ return {
     -- { import = "astrocommunity.pack.vue" },
     -- { import = "astrocommunity.pack.yaml" },
     { import = "astrocommunity.editing-support.vim-move" },
+    { import = "astrocommunity.utility.noice-nvim" },
     { import = "astrocommunity.colorscheme.nightfox-nvim", enabled = true },
     { import = "astrocommunity.colorscheme.kanagawa-nvim", enabled = true },
     { import = "astrocommunity.colorscheme.rose-pine" },
