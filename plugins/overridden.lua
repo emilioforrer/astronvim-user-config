@@ -13,6 +13,10 @@ return {
                 "RainbowViolet",
                 "RainbowCyan",
             }
+
+
+            opts.indent.char = "▏"
+            opts.indent.tab_char = "▏"
             
             
             local hooks = require "ibl.hooks"
