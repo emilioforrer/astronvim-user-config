@@ -39,16 +39,12 @@ vim.api.nvim_set_keymap("v", "<C-x>", '"+d', { noremap = true, silent = true })
 
 -- Change without copy
 vim.api.nvim_set_keymap("n", "<A-c>", '"_c', { noremap = true })
-vim.api.nvim_set_keymap("n", "<A-C>", '"_C', { noremap = true })
 
 -- Delete without copy
 vim.api.nvim_set_keymap("n", "<A-d>", '"_d', { noremap = true })
-vim.api.nvim_set_keymap("n", "<A-D>", '"_D', { noremap = true })
-vim.api.nvim_set_keymap("n", "<A-dd>", '"_dd', { noremap = true })
 
 vim.api.nvim_set_keymap("v", "<A-d>", '"_d', { noremap = true })
-vim.api.nvim_set_keymap("v", "<A-D>", '"_D', { noremap = true })
-vim.api.nvim_set_keymap("v", "<A-dd>", '"_dd', { noremap = true })
+
 
 
 vim.api.nvim_set_keymap("n", "<BS>", '"_d', { noremap = true })
