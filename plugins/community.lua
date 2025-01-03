@@ -21,6 +21,7 @@ return {
     -- { import = "astrocommunity.pack.typescript-all-in-one" },
     -- { import = "astrocommunity.pack.vue" },
     -- { import = "astrocommunity.pack.yaml" },
+    { import = "astrocommunity.motion.mini-surround" },
     { import = "astrocommunity.editing-support.vim-move" },
     { import = "astrocommunity.utility.noice-nvim" },
     { import = "astrocommunity.colorscheme.nightfox-nvim", enabled = true },
