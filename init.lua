@@ -38,6 +38,23 @@ vim.api.nvim_set_keymap("v", "<C-x>", '"+d', { noremap = true, silent = true })
 
 
 -- Change without copy
+vim.api.nvim_set_keymap("n", "<A-c>", '"_c', { noremap = true })
+vim.api.nvim_set_keymap("n", "<A-C>", '"_C', { noremap = true })
+
+-- Delete without copy
+vim.api.nvim_set_keymap("n", "<A-d>", '"_d', { noremap = true })
+vim.api.nvim_set_keymap("n", "<A-D>", '"_D', { noremap = true })
+vim.api.nvim_set_keymap("n", "<A-dd>", '"_dd', { noremap = true })
+
+vim.api.nvim_set_keymap("v", "<A-d>", '"_d', { noremap = true })
+vim.api.nvim_set_keymap("v", "<A-D>", '"_D', { noremap = true })
+vim.api.nvim_set_keymap("v", "<A-dd>", '"_dd', { noremap = true })
+
+
+vim.api.nvim_set_keymap("n", "<BS>", '"_d', { noremap = true })
+vim.api.nvim_set_keymap("v", "<BS>", '"_d', { noremap = true })
+
+-- Change without copy
 -- vim.api.nvim_set_keymap("n", "c", '"_c', { noremap = true })
 -- vim.api.nvim_set_keymap("n", "<S-c>", '"_C', { noremap = true })
 
@@ -45,12 +62,11 @@ vim.api.nvim_set_keymap("v", "<C-x>", '"+d', { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap("n", "d", '"_d', { noremap = true })
 -- vim.api.nvim_set_keymap("n", "<S-d>", '"_D', { noremap = true })
 -- vim.api.nvim_set_keymap("n", "dd", '"_dd', { noremap = true })
-vim.api.nvim_set_keymap("n", "<BS>", '"_d', { noremap = true })
+
 
 -- vim.api.nvim_set_keymap("v", "d", '"_d', { noremap = true })
 -- vim.api.nvim_set_keymap("v", "<S-d>", '"_D', { noremap = true })
 -- vim.api.nvim_set_keymap("v", "dd", '"_dd', { noremap = true })
-vim.api.nvim_set_keymap("v", "<BS>", '"_d', { noremap = true })
 
 -- -- Copy to clipboard
 -- vim.api.nvim_set_keymap("n", "<leader>Y", '"+y', { noremap = true })
