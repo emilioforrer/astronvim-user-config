@@ -1,74 +1,93 @@
-local role_map = {
-    user = "human",
-    assistant = "assistant",
-    system = "system",
-  }
-  
-  local parse_messages = function(opts)
-    local messages = {
-      { role = "system", content = opts.system_prompt },
-    }
-    vim
-      .iter(opts.messages)
-      :each(function(msg) table.insert(messages, { speaker = role_map[msg.role], text = msg.content }) end)
-    return messages
-  end
-  
-  local parse_response = function(data_stream, event_state, opts)
-    if event_state == "done" then
-      opts.on_complete()
-      return
-    end
-  
-    if data_stream == nil or data_stream == "" then return end
-  
-    local json = vim.json.decode(data_stream)
-    local delta = json.deltaText
-    local stopReason = json.stopReason
-  
-    if stopReason == "end_turn" then return end
-  
-    opts.on_chunk(delta)
-  end
-  
-  ---@type AvanteProvider
-  cody = {
-    endpoint = "https://sourcegraph.com",
-    model = "anthropic::2024-10-22::claude-3-5-sonnet-latest",
-    api_key_name = "SRC_ACCESS_TOKEN",
-    --- This function below will be used to parse in cURL arguments.
-    --- It takes in the provider options as the first argument, followed by code_opts retrieved from given buffer.
-    --- This code_opts include:
-    --- - question: Input from the users
-    --- - code_lang: the language of given code buffer
-    --- - code_content: content of code buffer
-    --- - selected_code_content: (optional) If given code content is selected in visual mode as context.
-    ---@type fun(opts: AvanteProvider, code_opts: AvantePromptOptions): AvanteCurlOutput
-    parse_curl_args = function(opts, code_opts)
-      local headers = {
-        ["Content-Type"] = "application/json",
-        ["Authorization"] = "token " .. os.getenv(opts.api_key_name),
-      }
-  
-      return {
-        url = opts.endpoint .. "/.api/completions/stream?api-version=2&client-name=web&client-version=0.0.1",
-        timeout = base.timeout,
-        insecure = false,
-        headers = headers,
-        body = vim.tbl_deep_extend("force", {
-          model = opts.model,
-          temperature = 0,
-          topK = -1,
-          topP = -1,
-          maxTokensToSample = 4000,
-          stream = true,
-          messages = M.parse_messages(code_opts),
-        }, {}),
-      }
-    end,
-    parse_response = parse_response,
-    parse_messages = parse_messages,
-  }
+-- --- Documentation for setting up Sourcegraph Cody
+-- --- Generating an access token: https://sourcegraph.com/docs/cli/how-tos/creating_an_access_token
+
+-- local P = require("avante.providers")
+-- local Utils = require("avante.utils")
+
+-- ---@class AvanteProviderFunctor
+-- local M = {}
+
+-- M.api_key_name = "SRC_ACCESS_TOKEN"
+-- M.role_map = {
+--   user = "human",
+--   assistant = "assistant",
+--   system = "system",
+-- }
+
+-- M.parse_messages = function(opts)
+--   local messages = {
+--     { role = "system", content = opts.system_prompt },
+--   }
+--   vim
+--     .iter(opts.messages)
+--     :each(function(msg) table.insert(messages, { speaker = M.role_map[msg.role], text = msg.content }) end)
+--   return messages
+-- end
+
+-- M.parse_response = function(data_stream, event_state, opts)
+--   -- vim.api.nvim_notify(vim.inspect(data_stream) .. "\n\n\n\n", 1, {})
+--   if event_state == "done" then
+--     opts.on_complete()
+--     return
+--   end
+
+--   if data_stream == nil or data_stream == "" then return end
+
+--   local json = vim.json.decode(data_stream)
+--   local delta = json.deltaText
+--   local stopReason = json.stopReason
+
+--   if stopReason == "end_turn" then return end
+
+--   opts.on_chunk(delta)
+-- end
+
+-- ---@param provider AvanteProviderFunctor
+-- ---@param code_opts AvantePromptOptions
+-- ---@return table
+-- M.parse_curl_args = function(provider, code_opts)
+--   local base, body_opts = P.parse_config(provider)
+
+--   local api_key = provider.parse_api_key()
+--   if api_key == nil then
+--     -- if no api key is available, make a request with a empty api key.
+--     api_key = ""
+--   end
+
+--   local headers = {
+--     ["Content-Type"] = "application/json",
+--     ["Authorization"] = "token " .. api_key,
+--   }
+
+--   return {
+--     url = Utils.trim(base.endpoint, { suffix = "/" })
+--       .. "/.api/completions/stream?api-version=2&client-name=web&client-version=0.0.1",
+--     timeout = base.timeout,
+--     insecure = false,
+--     headers = headers,
+--     body = vim.tbl_deep_extend("force", {
+--       model = base.model,
+--       temperature = body_opts.temperature,
+--       topK = body_opts.topK,
+--       topP = body_opts.topP,
+--       maxTokensToSample = body_opts.max_tokens,
+--       stream = true,
+--       messages = M.parse_messages(code_opts),
+--     }, {}),
+--   }
+-- end
+
+-- M.on_error = function() end
+
+-- M.endpoint = "https://sourcegraph.com"
+-- M.model = "anthropic::2024-10-22::claude-3-5-sonnet-latest"
+-- M.timeout = 30000
+-- M.max_tokens = 4000
+-- M.temperature = 0
+-- M.stream = true
+-- M.topK = -1
+-- M.topP = -1
+
 
 return {
     {
@@ -130,19 +149,25 @@ return {
     {
         "yetone/avante.nvim",
         opts = function(_, opts)
-        --   opts.dual_boost = {
-        --     enabled = false,
-        --     first_provider = "openai",
-        --     second_provider = "claude",
-        --   }
           
-        -- https://github.com/brewinski/avante.nvim/blob/feat/cody-provider/lua/avante/providers/cody.lua
-        --   opts.provider = "cody"
-        --   opts.cody = M
-        --   opts.vendors = {
-        --     ["cody"] = M
-        --   }
+
           opts.provider = "openai"
+
+          --   opts.dual_boost = {
+          --     enabled = false,
+          --     first_provider = "openai",
+          --     second_provider = "claude",
+          --   }
+          
+          -- https://github.com/brewinski/avante.nvim/blob/feat/cody-provider/lua/avante/providers/cody.lua
+          -- opts.provider = "cody"
+
+          -- opts.cody = {}
+
+          -- opts.vendors = {
+          --   ["cody"] = M
+          -- }
+          
           return opts
         end
       },
