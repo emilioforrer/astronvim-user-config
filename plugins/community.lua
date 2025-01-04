@@ -22,6 +22,7 @@ return {
     -- { import = "astrocommunity.pack.vue" },
     -- { import = "astrocommunity.pack.yaml" },
     { import = "astrocommunity.motion.mini-surround" },
+    { import = "astrocommunity.completion.avante-nvim" },
     { import = "astrocommunity.editing-support.vim-move" },
     { import = "astrocommunity.utility.noice-nvim" },
     { import = "astrocommunity.colorscheme.nightfox-nvim", enabled = true },
