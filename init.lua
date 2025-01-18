@@ -12,6 +12,17 @@ vim.opt.clipboard = "unnamedplus"
 
 -- ---------------------- Keybindings ------------------------------
 
+vim.api.nvim_set_keymap('n', '<leader>at', ':CodyToggle<CR>', { noremap = true, silent = true, desc = "Toggle Cody AI Assistant" })
+vim.api.nvim_set_keymap('v', '<leader>at', ':CodyToggle<CR>', { noremap = true, silent = true, desc = "Toggle Cody AI Assistant" })
+
+vim.api.nvim_set_keymap('n', '<leader>a<CR>', ':CodyAsk ', { noremap = true, silent = false, desc = "Ask Cody AI Assistant" })
+vim.api.nvim_set_keymap('v', '<leader>a<CR>', ":CodyAsk ", { noremap = true, silent = false, desc = "Ask Cody AI Assistant" })
+
+
+
+
+
+
 -- Unindent code with Shift + Tab in insert mode
 vim.api.nvim_set_keymap('i', '<S-Tab>', '<C-d>', { noremap = true, silent = true })
 
@@ -78,6 +89,34 @@ vim.api.nvim_set_keymap("v", "<BS>", '"_d', { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-d>', '<C-d>zz', opts)
 vim.api.nvim_set_keymap('n', '<C-u>', '<C-u>zz', opts)
 vim.api.nvim_set_keymap('n', 'Q', '<nop>', opts)
+
+if vim.g.neovide then
+  -- Set default path in Neovide
+  vim.cmd([[autocmd VimEnter * cd ~]])
+end
+
+-- Create a user command (:Z) to execute zoxide query
+vim.api.nvim_create_user_command('Z', function(opts)
+  local query = opts.args or ""
+  local handle = io.popen('zoxide query "' .. query .. '"')
+  if handle then
+    local result = handle:read("*a")
+    handle:close()
+    -- Trim whitespace from the result
+    local dir = result:match("^(.-)%s*$")
+    if dir and #dir > 0 then
+      -- Change Neovim's working directory
+      vim.cmd("cd " .. vim.fn.fnameescape(dir))
+      print("Directory changed to: " .. dir)
+    else
+      print("Error: No directory found for query: " .. query)
+    end
+  else
+    print("Error: Failed to execute zoxide command")
+  end
+end, { nargs = "?" })
+
+
 
 
 if vim.g.vscode then
@@ -176,9 +215,7 @@ else
 
 end
 
-return {
-
-} 
+return {} 
 
 
 
